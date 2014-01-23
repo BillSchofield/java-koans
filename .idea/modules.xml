@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lib/koans-tests/data/data.iml" filepath="$PROJECT_DIR$/lib/koans-tests/data/data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/file-compiler/file-compiler.iml" filepath="$PROJECT_DIR$/lib/file-compiler/file-compiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/file-monitor/file-monitor.iml" filepath="$PROJECT_DIR$/lib/file-monitor/file-monitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/koans/koans.iml" filepath="$PROJECT_DIR$/koans/koans.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/koans-lib/koans-lib.iml" filepath="$PROJECT_DIR$/lib/koans-lib/koans-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/koans-tests/koans-tests.iml" filepath="$PROJECT_DIR$/lib/koans-tests/koans-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/util/util.iml" filepath="$PROJECT_DIR$/lib/util/util.iml" />
+    </modules>
+  </component>
+</project>
+
