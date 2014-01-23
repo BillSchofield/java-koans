@@ -3,9 +3,9 @@
 Running Instructions:
 =====================
 * Install 'Bash Support' IntelliJ Plugin
-** IntelliJ IDEA > Preferences > Plugins > Browse Repositories...
-** Search for 'BashSupport'
-** Right click on the 'BashSupport' plugin and download it.
-** Click Close/Ok/Restart buttons until IntelliJ restarts
+ * IntelliJ IDEA > Preferences > Plugins > Browse Repositories...
+ * Search for 'BashSupport'
+ * Right click on the 'BashSupport' plugin and download it.
+ * Click Close/Ok/Restart buttons until IntelliJ restarts
 * Run 'Run Koans' configuration
 
