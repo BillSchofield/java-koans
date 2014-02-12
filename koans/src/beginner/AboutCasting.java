@@ -1,10 +1,10 @@
 package beginner;
 
+import com.sandwich.koan.Koan;
+
 import static com.sandwich.koan.constant.KoanConstants.__;
 import static com.sandwich.util.Assert.assertEquals;
 import static com.sandwich.util.Assert.fail;
-
-import com.sandwich.koan.Koan;
 
 @SuppressWarnings("unused")
 public class AboutCasting {
@@ -35,79 +35,79 @@ public class AboutCasting {
 		assertEquals(c, __);
 	}
 
-	interface Sleepable {
-		String sleep();
+	interface Speaker {
+		String speak();
 	}
 
-	class Grandparent implements Sleepable {
-		public String sleep() {
-			return "zzzz";
+	class Cat implements Speaker {
+		public String speak() {
+			return "Meow";
 		}
 	}
 
-	class Parent extends Grandparent {
-		public String complain() {
-			return "TPS reports don't even have a cover letter!";
+	class Lion extends Cat {
+		public String speak() {
+			return "Roar";
 		}
 	}
 
-	class Child extends Parent {
-		public String complain() {
-			return "Are we there yet!!";
+	class LionCub extends Lion {
+		public String speak() {
+			return "Grrr";
 		}
 	}
 
 	@Koan
 	public void downCastWithInheritance() {
-		Child child = new Child();
-		Parent parentReference = child; // Why isn't there an explicit cast?
-		assertEquals(child instanceof Child, __);
-		assertEquals(parentReference instanceof Child, __);
-		assertEquals(parentReference instanceof Parent, __);
-		assertEquals(parentReference instanceof Grandparent, __);
+		LionCub lionCub = new LionCub();
+		Lion lionReference = lionCub; // Why isn't there an explicit cast?
+		assertEquals(lionCub instanceof LionCub, __);
+		assertEquals(lionReference instanceof LionCub, __);
+		assertEquals(lionReference instanceof Lion, __);
+		assertEquals(lionReference instanceof Cat, __);
 	}
 
 	@Koan
 	public void downCastAndPolymorphism() {
-		Child child = new Child();
-		Parent parentReference = child;
+		LionCub lionCub = new LionCub();
+		Lion lionReference = lionCub;
 		// If the result is unexpected, consider the difference between an instance and its reference
-		assertEquals(parentReference.complain(), __);
+		assertEquals(lionReference.speak(), __);
 	}
 
 	@Koan
 	public void upCastWithInheritance() {
-		Grandparent child = new Child();
-		Parent parentReference = (Parent) child; // Why do we need an explicit cast here?
-		Child childReference = (Child) parentReference; // Or here?
-		assertEquals(childReference instanceof Child, __);
-		assertEquals(childReference instanceof Parent, __);
-		assertEquals(childReference instanceof Grandparent, __);
+		Cat child = new LionCub();
+		Lion lionReference = (Lion) child; // Why do we need an explicit cast here?
+		LionCub lionCubReference = (LionCub) lionReference; // Or here?
+		assertEquals(lionCubReference instanceof LionCub, __);
+		assertEquals(lionCubReference instanceof Lion, __);
+		assertEquals(lionCubReference instanceof Cat, __);
 	}
 
 	@Koan
 	public void upCastAndPolymorphism() {
-		Grandparent child = new Child();
-		Parent parent = (Child) child;
+		Cat child = new LionCub();
+		Lion lion = (LionCub) child;
 		// Think about the result. Did you expect that? Why?
 		// How is that different from above?
-		assertEquals(parent.complain(), __);
+		assertEquals(lion.speak(), __);
 	}
 
 	@Koan
 	public void classCasting() {
 		try {
 			Object o = new Object();
-			((Sleepable) o).sleep(); // would this even compile without the cast?
+			((Speaker) o).speak(); // would this even compile without the cast?
 		} catch (ClassCastException x) {
-			fail("Object does not implement Sleepable, maybe one of the people classes do?");
+			fail("Object does not implement Speaker, maybe one of the people classes do?");
 		}
 	}
 
 	@Koan
 	public void complicatedCast() {
-		Grandparent parent = new Parent();
-		// How can we access the parent's ability to "complain" - if the reference is held as a superclass?
+		Cat parent = new Lion();
+		// How can we access the parent's ability to "speak" - if the reference is held as a superclass?
 		assertEquals("TPS reports don't even have a cover letter!", __);
 	}
 
