@@ -2,6 +2,8 @@
 #Java Koans in IntelliJ
 Running Instructions:
 =====================
+* Install Maven
+* Install Tomcat
 * Install 'Bash Support' IntelliJ Plugin
  * IntelliJ IDEA > Preferences > Plugins > Browse Repositories...
  * Search for 'BashSupport'
