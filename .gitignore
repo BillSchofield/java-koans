@@ -1,6 +1,7 @@
 *.class
 */bin/*
 .metadata
+.idea/
 bin/*
 lib/build/bin/*
 lib/build/reports/*
